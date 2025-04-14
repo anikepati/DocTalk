@@ -1,0 +1,8 @@
+streamlit
+langchain
+langchain-community
+langchain-elasticsearch
+langchain-ollama
+pypdf
+elasticsearch
+PyPDF2
