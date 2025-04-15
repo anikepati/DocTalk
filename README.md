@@ -1,65 +1,62 @@
-Overview
+**Overview**
 
-DocTalk Gen AI (GitHub) is an AI-powered document chat application designed to allow users to upload PDF files, process their content, and ask questions about the documents. It leverages a conversational AI model (LLaMA 3.2) with Elasticsearch for vector-based document retrieval, providing efficient and context-aware responses. The application uses Streamlit for an intuitive web-based interface.
+**DocTalk Gen AI**
+is an AI-powered document chat application designed to allow users to upload PDF files, process their content, and ask questions about the documents. It leverages a conversational AI model (LLaMA 3.2) with Elasticsearch for vector-based document retrieval, providing efficient and context-aware responses. The application uses Streamlit for an intuitive web-based interface.
 
- Purpose
+ **Purpose**
 
- The application enables users to interact with PDF documents conversationally, extracting insights and answering queries based on the document content. It is ideal for users who need to quickly understand or query large documents without manually searching through them.
+The application enables users to interact with PDF documents conversationally, extracting insights and answering queries based on the document content. It is ideal for users who need to quickly understand or query large documents without manually searching through them.
 
- Features
+**Features**
 
-PDF Upload: Upload PDF files for processing.
+**PDF Upload**: Upload PDF files for processing.
 
-Text Extraction and Indexing: Extracts text from PDFs, splits it into chunks, generates embeddings, and indexes them in Elasticsearch.
+**Text Extraction and Indexing**: Extracts text from PDFs, splits it into chunks, generates embeddings, and indexes them in Elasticsearch.
 
-Conversational AI: Uses LLaMA 3.2 to answer questions with context from the uploaded PDFs.
+**Conversational AI**: Uses LLaMA 3.2 to answer questions with context from the uploaded PDFs.
 
-Chat History: Maintains a conversation history for context-aware interactions.
+**Chat History**: Maintains a conversation history for context-aware interactions.
 
-Source Attribution: Displays the source document chunks used to generate answers.
+**Source Attribution**: Displays the source document chunks used to generate answers.
 
-Streamlit UI: Provides a user-friendly interface for file uploads, question input, and response display.
+**Streamlit UI**: Provides a user-friendly interface for file uploads, question input, and response display.
 
- Architecture
+**Architecture**
 
- The application follows a modular architecture with the following components:
+The application follows a modular architecture with the following components:
 
-Frontend: Streamlit-based UI for user interaction (file upload, question input, and response display).
+**Frontend**: Streamlit-based UI for user interaction (file upload, question input, and response display).
 
-Backend: PDF Processing: Extracts text using PyPDF2 and splits it into chunks with LangChain's text splitter. Embedding Generation: Generates vector embeddings using Ollama (mxbai-embed-large). Elasticsearch Integration: Stores and retrieves document embeddings for similarity-based search. Conversational AI: Combines LLaMA 3.2 with LangChain's conversational retrieval chain for answering queries.
+**Backend**: PDF Processing: Extracts text using PyPDF2 and splits it into chunks with LangChain's text splitter. Embedding Generation: Generates vector embeddings using Ollama (mxbai-embed-large). Elasticsearch Integration: Stores and retrieves document embeddings for similarity-based search. Conversational AI: Combines LLaMA 3.2 with LangChain's conversational retrieval chain for answering queries.
 
-Memory: Uses LangChain's ConversationBufferMemory to retain chat history.
-
-Minimize image
-Edit image
-Delete image
-
-Process Flow Diagram
+**Memory**: Uses LangChain's ConversationBufferMemory to retain chat history.
 
 
-Key Components
 
-LLM: OllamaLLM(model="llama3.2:latest") for generating conversational responses.
 
-Embeddings: OllamaEmbeddings(model="mxbai-embed-large") for vectorizing text chunks.
+**Key Components**
 
-Elasticsearch: Stores text and embeddings in the pdf_chatbot_index index with a dense vector field (1024 dimensions).
+**LLM**: OllamaLLM(model="llama3.2:latest") for generating conversational responses.
 
-Prompt Template: Custom QA prompt to ensure accurate and context-aware answers.
+**Embeddings**: OllamaEmbeddings(model="mxbai-embed-large") for vectorizing text chunks.
 
-Memory: ConversationBufferMemory to store chat history and enable follow-up questions.
+**Elasticsearch**: Stores text and embeddings in the pdf_chatbot_index index with a dense vector field (1024 dimensions).
 
-Retriever: ElasticsearchStore.as_retriever() to fetch the top 3 relevant document chunks based on vector similarity.
+**Prompt Template**: Custom QA prompt to ensure accurate and context-aware answers.
 
-Error Handling
+**Memory**: ConversationBufferMemory to store chat history and enable follow-up questions.
 
-UI Errors: Displays errors in the Streamlit UI for issues like failed Elasticsearch connections or query processing errors.
+**Retriever**: ElasticsearchStore.as_retriever() to fetch the top 3 relevant document chunks based on vector similarity.
 
-Logging: Uses Python’s logging module to log indexing and connection activities for debugging (vector_embedding.py).
+**Error Handling**
 
-Connection Check: Verifies Elasticsearch connectivity during initialization.
+**UI Errors**: Displays errors in the Streamlit UI for issues like failed Elasticsearch connections or query processing errors.
 
-Limitations
+**Logging**: Uses Python’s logging module to log indexing and connection activities for debugging (vector_embedding.py).
+
+**Connection Check**: Verifies Elasticsearch connectivity during initialization.
+
+**Limitations**
 
 Supports only PDF files; other formats (e.g., DOCX, TXT) are not supported.
 
@@ -69,7 +66,7 @@ Depends on Ollama for LLM and embeddings, which may have performance or compatib
 
 Fixed embedding dimension (1024) based on mxbai-embed-large.
 
-Future Enhancements
+**Future Enhancements**
 
 Add support for additional document formats (e.g., DOCX, TXT).
 
@@ -81,7 +78,7 @@ Enhance the UI with features like multi-file uploads or advanced query options.
 
 Add support for multi-language documents.
 
-Troubleshooting
+**Troubleshooting**
 
 Elasticsearch Not Running:
 
@@ -91,7 +88,7 @@ Dependency Errors:
 
 PDF Processing Errors
 
-License
+**License**
 
 This project is provided as-is for educational and personal use. Ensure compliance with the licenses of dependencies (e.g., Streamlit, LangChain, Elasticsearch).
 
