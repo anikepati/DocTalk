@@ -1,0 +1,18 @@
+{
+  "schema": "hfa.borrower_record.v1",
+  "loan_id": "HFA-DEMO",
+  "draw_no": 19,
+  "period_to": "2026-11-30",
+  "lines": [
+    {"key": "1", "label": "Land Acquisition",      "category": "ACQUISITION", "budget": 1500000.00, "paid_to_date": 1500000.00, "this_draw": 0.00},
+    {"key": "2", "label": "Sitework",              "category": "HARD",        "budget": 420000.00,  "paid_to_date": 380000.00,  "this_draw": 40000.00},
+    {"key": "3", "label": "Electrical",            "category": "HARD",        "budget": 610000.00,  "paid_to_date": 305000.00,  "this_draw": 61000.00},
+    {"key": "4", "label": "Doors & Windows",       "category": "HARD",        "budget": 275000.00,  "paid_to_date": 110000.00,  "this_draw": 27500.00},
+    {"key": "5", "label": "Architect",             "category": "SOFT",        "budget": 180000.00,  "paid_to_date": 150000.00,  "this_draw": 9000.00},
+    {"key": "6", "label": "Engineering",           "category": "SOFT",        "budget": 95000.00,   "paid_to_date": 38500.00,   "this_draw": 4750.00},
+    {"key": "7", "label": "Survey",                "category": "SOFT",        "budget": 12500.00,   "paid_to_date": 12500.00,   "this_draw": 0.00},
+    {"key": "8", "label": "Permits & Impact Fees", "category": "SOFT",        "budget": 48250.00,   "paid_to_date": 48250.00,   "this_draw": 0.00},
+    {"key": "9", "label": "Solar PV System",       "category": "HARD",        "budget": 60000.00,   "paid_to_date": 0.00,       "this_draw": 15000.00}
+  ],
+  "totals": {"budget": 3200750.00, "paid_to_date": 2544250.00, "this_draw": 157250.00}
+}

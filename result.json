@@ -1,0 +1,429 @@
+{
+  "schema": "hfa.resolution_result.v1",
+  "loan_id": "HFA-DEMO",
+  "draw_no": 19,
+  "system_as_of_draw": 18,
+  "engine_version": "1.0.0",
+  "config_version": "5c1518d6827e",
+  "status": "NEEDS_REVIEW",
+  "input_checks": [],
+  "summary": {
+    "borrower_lines": 9,
+    "resolved": 8,
+    "resolved_confirm": 0,
+    "ambiguous": 0,
+    "new": 1,
+    "system_lines_unresolved": 0,
+    "by_rule": {
+      "-": 1,
+      "M02": 4,
+      "M05": 3,
+      "M06": 1
+    },
+    "budget_check": {
+      "AGREE": 5,
+      "SYSTEM_TYPO": 1
+    },
+    "paid_to_date_check": {
+      "AGREE": 6
+    },
+    "category_check": {
+      "AGREE": 6
+    },
+    "decisions": 7,
+    "needs_review": 1
+  },
+  "decisions": [
+    {
+      "decision_id": "G003",
+      "status": "RESOLVED",
+      "action": "None. Matched automatically.",
+      "rule_id": "M02",
+      "rule": "M02 Same label or cost code, same amounts",
+      "relation": "one to one",
+      "confidence": 1.0,
+      "explanation": "Labels are the same after cleanup ('land acquisition'); budget and paid-to-date agree.",
+      "borrower_lines": [
+        {
+          "key": "1",
+          "label": "Land Acquisition",
+          "category": "ACQUISITION",
+          "budget": 1500000.0,
+          "paid_to_date": 1500000.0,
+          "this_draw": 0.0,
+          "reads_as": "land acquisition"
+        }
+      ],
+      "system_lines": [
+        {
+          "key": "S1",
+          "label": "Land Acq.",
+          "category": "ACQUISITION",
+          "budget": 1500000.0,
+          "paid_to_date": 1500000.0,
+          "reads_as": "land acquisition"
+        }
+      ],
+      "label_cleanup": [
+        "'acq' -> 'acquisition'"
+      ],
+      "checks": {
+        "budget": {
+          "result": "AGREE",
+          "borrower": 1500000.0,
+          "system": 1500000.0,
+          "difference": 0.0
+        },
+        "paid_to_date": {
+          "result": "AGREE",
+          "borrower": 1500000.0,
+          "system": 1500000.0,
+          "difference": 0.0
+        },
+        "category": "AGREE"
+      }
+    },
+    {
+      "decision_id": "G004",
+      "status": "RESOLVED",
+      "action": "None. Matched automatically.",
+      "rule_id": "M02",
+      "rule": "M02 Same label or cost code, same amounts",
+      "relation": "one to one",
+      "confidence": 1.0,
+      "explanation": "Both labels map to cost code HC-0100; budget and paid-to-date agree.",
+      "borrower_lines": [
+        {
+          "key": "2",
+          "label": "Sitework",
+          "category": "HARD",
+          "budget": 420000.0,
+          "paid_to_date": 380000.0,
+          "this_draw": 40000.0,
+          "reads_as": "sitework"
+        }
+      ],
+      "system_lines": [
+        {
+          "key": "S2",
+          "label": "Site Work - per CO #2",
+          "category": "HARD",
+          "budget": 420000.0,
+          "paid_to_date": 380000.0,
+          "reads_as": "site work"
+        }
+      ],
+      "label_cleanup": [
+        "removed note 'per co #2'"
+      ],
+      "checks": {
+        "budget": {
+          "result": "AGREE",
+          "borrower": 420000.0,
+          "system": 420000.0,
+          "difference": 0.0
+        },
+        "paid_to_date": {
+          "result": "AGREE",
+          "borrower": 380000.0,
+          "system": 380000.0,
+          "difference": 0.0
+        },
+        "category": "AGREE"
+      }
+    },
+    {
+      "decision_id": "G002",
+      "status": "RESOLVED",
+      "action": "None. Matched automatically.",
+      "rule_id": "M02",
+      "rule": "M02 Same label or cost code, same amounts",
+      "relation": "one to one",
+      "confidence": 1.0,
+      "explanation": "Labels are the same after cleanup ('electrical'); budget and paid-to-date agree.",
+      "borrower_lines": [
+        {
+          "key": "3",
+          "label": "Electrical",
+          "category": "HARD",
+          "budget": 610000.0,
+          "paid_to_date": 305000.0,
+          "this_draw": 61000.0,
+          "reads_as": "electrical"
+        }
+      ],
+      "system_lines": [
+        {
+          "key": "S3",
+          "label": "Elecrtical",
+          "category": "HARD",
+          "budget": 610000.0,
+          "paid_to_date": 305000.0,
+          "reads_as": "electrical"
+        }
+      ],
+      "label_cleanup": [
+        "spelling 'elecrtical' -> 'electrical'"
+      ],
+      "checks": {
+        "budget": {
+          "result": "AGREE",
+          "borrower": 610000.0,
+          "system": 610000.0,
+          "difference": 0.0
+        },
+        "paid_to_date": {
+          "result": "AGREE",
+          "borrower": 305000.0,
+          "system": 305000.0,
+          "difference": 0.0
+        },
+        "category": "AGREE"
+      }
+    },
+    {
+      "decision_id": "G001",
+      "status": "RESOLVED",
+      "action": "None. Matched automatically.",
+      "rule_id": "M02",
+      "rule": "M02 Same label or cost code, same amounts",
+      "relation": "one to one",
+      "confidence": 1.0,
+      "explanation": "Labels are the same after cleanup ('doors windows'); budget and paid-to-date agree.",
+      "borrower_lines": [
+        {
+          "key": "4",
+          "label": "Doors & Windows",
+          "category": "HARD",
+          "budget": 275000.0,
+          "paid_to_date": 110000.0,
+          "this_draw": 27500.0,
+          "reads_as": "doors windows"
+        }
+      ],
+      "system_lines": [
+        {
+          "key": "S4",
+          "label": "Drs & Windows",
+          "category": "HARD",
+          "budget": 275000.0,
+          "paid_to_date": 110000.0,
+          "reads_as": "doors windows"
+        }
+      ],
+      "label_cleanup": [
+        "'drs' -> 'doors'"
+      ],
+      "checks": {
+        "budget": {
+          "result": "AGREE",
+          "borrower": 275000.0,
+          "system": 275000.0,
+          "difference": 0.0
+        },
+        "paid_to_date": {
+          "result": "AGREE",
+          "borrower": 110000.0,
+          "system": 110000.0,
+          "difference": 0.0
+        },
+        "category": "AGREE"
+      }
+    },
+    {
+      "decision_id": "G005",
+      "status": "RESOLVED",
+      "action": "None. Matched automatically.",
+      "rule_id": "M05",
+      "rule": "M05 Summation: one system line = several borrower lines",
+      "relation": "one system line = several borrower lines",
+      "confidence": 0.97,
+      "explanation": "'A&E + Survey' equals the sum of 3 borrower lines (Architect + Engineering + Survey): budget $287,500.00, paid-to-date $201,000.00 on both sides.",
+      "borrower_lines": [
+        {
+          "key": "5",
+          "label": "Architect",
+          "category": "SOFT",
+          "budget": 180000.0,
+          "paid_to_date": 150000.0,
+          "this_draw": 9000.0,
+          "reads_as": "architect"
+        },
+        {
+          "key": "6",
+          "label": "Engineering",
+          "category": "SOFT",
+          "budget": 95000.0,
+          "paid_to_date": 38500.0,
+          "this_draw": 4750.0,
+          "reads_as": "engineering"
+        },
+        {
+          "key": "7",
+          "label": "Survey",
+          "category": "SOFT",
+          "budget": 12500.0,
+          "paid_to_date": 12500.0,
+          "this_draw": 0.0,
+          "reads_as": "survey"
+        }
+      ],
+      "system_lines": [
+        {
+          "key": "S5",
+          "label": "A&E + Survey",
+          "category": "SOFT",
+          "budget": 287500.0,
+          "paid_to_date": 201000.0,
+          "reads_as": "architecture engineering survey"
+        }
+      ],
+      "label_cleanup": [
+        "'a&e' -> 'architecture engineering'"
+      ],
+      "checks": {
+        "budget": {
+          "result": "AGREE",
+          "borrower": 287500.0,
+          "system": 287500.0,
+          "difference": 0.0
+        },
+        "paid_to_date": {
+          "result": "AGREE",
+          "borrower": 201000.0,
+          "system": 201000.0,
+          "difference": 0.0
+        },
+        "category": "AGREE"
+      }
+    },
+    {
+      "decision_id": "G006",
+      "status": "RESOLVED",
+      "action": "None. Matched automatically.",
+      "rule_id": "M06",
+      "rule": "M06 Label variant or typo, amounts differ",
+      "relation": "one to one",
+      "confidence": 1.0,
+      "explanation": "Labels match (same cost code SC-0200); amounts differ, see the amount check.",
+      "borrower_lines": [
+        {
+          "key": "8",
+          "label": "Permits & Impact Fees",
+          "category": "SOFT",
+          "budget": 48250.0,
+          "paid_to_date": 48250.0,
+          "this_draw": 0.0,
+          "reads_as": "permits impact"
+        }
+      ],
+      "system_lines": [
+        {
+          "key": "S6",
+          "label": "Permits & Impact",
+          "category": "SOFT",
+          "budget": 42850.0,
+          "paid_to_date": 48250.0,
+          "reads_as": "permits impact"
+        }
+      ],
+      "label_cleanup": [],
+      "checks": {
+        "budget": {
+          "result": "SYSTEM_TYPO (TRANSPOSED_DIGITS)",
+          "borrower": 48250.0,
+          "system": 42850.0,
+          "difference": 5400.0
+        },
+        "paid_to_date": {
+          "result": "AGREE",
+          "borrower": 48250.0,
+          "system": 48250.0,
+          "difference": 0.0
+        },
+        "category": "AGREE"
+      }
+    },
+    {
+      "decision_id": "NEW-9",
+      "status": "NEW",
+      "action": "Decide: a genuinely new budget line, or a system line too different to match safely.",
+      "rule_id": null,
+      "rule": null,
+      "relation": null,
+      "confidence": 0.0,
+      "explanation": "No system line has this meaning or these amounts: a new line, or a system line too different to match safely.",
+      "borrower_lines": [
+        {
+          "key": "9",
+          "label": "Solar PV System",
+          "category": "HARD",
+          "budget": 60000.0,
+          "paid_to_date": 0.0,
+          "this_draw": 15000.0,
+          "reads_as": "solar pv system"
+        }
+      ],
+      "system_lines": [],
+      "label_cleanup": [],
+      "checks": {
+        "budget": {
+          "result": "n/a",
+          "borrower": 60000.0,
+          "system": null,
+          "difference": null
+        },
+        "paid_to_date": {
+          "result": "n/a",
+          "borrower": 0.0,
+          "system": null,
+          "difference": null
+        },
+        "category": "n/a"
+      }
+    }
+  ],
+  "unresolved_system_lines": [],
+  "category_tieout": [
+    {
+      "category": "ACQUISITION",
+      "budget": {
+        "system": 1500000.0,
+        "borrower": 1500000.0,
+        "difference": 0.0
+      },
+      "paid_to_date": {
+        "system": 1500000.0,
+        "borrower": 1500000.0,
+        "difference": 0.0
+      }
+    },
+    {
+      "category": "HARD",
+      "budget": {
+        "system": 1305000.0,
+        "borrower": 1365000.0,
+        "difference": 60000.0
+      },
+      "paid_to_date": {
+        "system": 795000.0,
+        "borrower": 795000.0,
+        "difference": 0.0
+      }
+    },
+    {
+      "category": "SOFT",
+      "budget": {
+        "system": 330350.0,
+        "borrower": 335750.0,
+        "difference": 5400.0
+      },
+      "paid_to_date": {
+        "system": 249250.0,
+        "borrower": 249250.0,
+        "difference": 0.0
+      }
+    }
+  ],
+  "fingerprint": "6ad6f3d2968ecd31"
+}

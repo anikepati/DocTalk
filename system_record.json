@@ -1,0 +1,13 @@
+{
+  "schema": "hfa.system_record.v1",
+  "loan_id": "HFA-DEMO",
+  "as_of_draw": 18,
+  "lines": [
+    {"key": "S1", "label": "Land Acq.",              "category": "ACQUISITION", "budget": 1500000.00, "paid_to_date": 1500000.00},
+    {"key": "S2", "label": "Site Work - per CO #2",  "category": "HARD",        "budget": 420000.00,  "paid_to_date": 380000.00},
+    {"key": "S3", "label": "Elecrtical",             "category": "HARD",        "budget": 610000.00,  "paid_to_date": 305000.00},
+    {"key": "S4", "label": "Drs & Windows",          "category": "HARD",        "budget": 275000.00,  "paid_to_date": 110000.00},
+    {"key": "S5", "label": "A&E + Survey",           "category": "SOFT",        "budget": 287500.00,  "paid_to_date": 201000.00},
+    {"key": "S6", "label": "Permits & Impact",       "category": "SOFT",        "budget": 42850.00,   "paid_to_date": 48250.00}
+  ]
+}
